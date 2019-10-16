@@ -1,0 +1,22 @@
+{
+  "name": "weather-cli",
+  "version": "1.0.0",
+  "description": "Using weather API with axios for comand line (Linux terminal)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/florianbux/weather-cli.git"
+  },
+  "author": "Florian Bux",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/florianbux/weather-cli/issues"
+  },
+  "homepage": "https://github.com/florianbux/weather-cli#readme",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}
