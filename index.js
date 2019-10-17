@@ -53,8 +53,8 @@ axios
     .all([getWeather(), getForecast()])
     .then(
         axios.spread((weather, forecast) => {
-            let weatherData = weather.data;
-            currentWeather(weatherData);
+            // let weatherData = weather.data;
+            // currentWeather(weatherData);
             let forecastList = forecast.data.list;
             forecastNextDays(forecastList);
         })
@@ -75,12 +75,20 @@ currentWeather = obj => {
 };
 
 forecastNextDays = arr => {
-    // console.log(arr);
-    // let date = new Date(forecast.data.list[1].dt * 1000);
-    // console.log("==>", forecast.data.list);
+    for (let i = 0; i < arr.length; i++) {
+        if (i == 0) console.log(`${arr[i].dt_txt} \n`);
+        else {
+            if ((arr[i].dt - arr[0].dt) % 86400 == 0) {
+                console.log(`${arr[i].dt_txt} \n`);
+            }
+        }
+    }
+
     // let fiveDays = [];
-    // list.forEach(element => {
+    // arr.forEach(element => {
     //     if (element.dt_txt.includes("12:")) fiveDays.push(element);
     // });
     // console.log(fiveDays, fiveDays.length);
+    // let dt = new Date(1571207117*1000)
+    // let res = dt.toISOString().substring(0, 10)
 };
